@@ -8,73 +8,49 @@
         body {
             margin: 0;
             padding: 0;
-             background-color: #111111;
-background-image: none;
-color: #ffffff;
-
-            margin: 0;
-            padding: 0;
-            background-color: #ffcc00;
-            background-image: none;
-            color: #000000;
+            background-color: #111111; /* Тёмно-чёрный фон */
+            color: #ffffff;            /* Белый цвет текста */
             font-family: Arial, sans-serif;
             display: flex;
-
-background-image: none;
-
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
+            box-sizing: border-box;
         }
+
         .container {
-            max-width: 600px;
+            text-align: center;
             padding: 20px;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.1rem;
-            color: #b3b3b3;
-            margin-bottom: 40px;
-        }
-        .btn {
+
+        .btn-download {
             display: inline-block;
-            background-color: #ff4500;
-            color: #ffffff;
-            text-decoration: none;
+            margin-top: 20px;
             padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
+            color: #111111;
+            background-color: #ffcc00; /* Яркая жёлтая кнопка */
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
         }
-        .btn:hover {
-            background-color: #ff5722;
+
+        .btn-download:hover {
+            background-color: #e6b800;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Добро пожаловать на Bless Russia! </h1>
-        <p>Нажмите на кнопку ниже, чтобы загрузить лаунчер игры и также ждем на проекте.</p>
-        <a href="https://disk.yandex.ru/d/E75LWL18t4NLXg" class="btn">Скачать лаунчер</a>
-
-    </div
+        <h1>Добро пожаловать на Bless Russia!</h1>
+        <p>Скачайте официальный лаунчер игры по кнопке ниже</p>
+        
+        <!-- Кнопка со ссылкой на ваш Яндекс Диск -->
+        <a href="https://disk.yandex.ru/d/E75LWL18t4NLXg" class="btn-download">Скачать APK</a>
+    </div>
 
 </body>
 </html>
