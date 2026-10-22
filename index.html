@@ -9,12 +9,12 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: SEKS:
+            box-sizing: border-box;
         }
 
         /* Полностью черный глубокий фон */
         body {
-            background-color: #123456:
+            background-color: #000000;
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
@@ -76,7 +76,7 @@
         .download-btn:hover {
             background-color: #cc0000; /* Чуть темнее при наведении */
             box-shadow: 0 0 35px rgba(255, 0, 0, 0.8);
-            transform: scale(1.03); слегка увеличивается */
+            transform: scale(1.03); /* Кнопка слегка увеличивается */
         }
 
         /* Стиль кнопки в момент загрузки */
@@ -91,12 +91,14 @@
         @media (max-width: 480px) {
             h1 { font-size: 2rem; }
             p { font-size: 1rem; }
-            .download-btn { width: 120%; padding: 16px 20px; font-size: 1.1rem; }
-        
+            .download-btn { width: 100%; padding: 16px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
 <body>
 
     <div class="container">
-        <h1>Добро пожаловать на ХУЙНЯ ПРОЕКТ</h1>
+        <h1>Добро пожаловать на Bless Russia!</h1>
         <p>Скачайте официальный файл по кнопке ниже и погрузитесь в игру.</p>
         
         <!-- Кнопка вызова автоматического скачивания -->
@@ -112,3 +114,39 @@
             btn.innerText = 'Загрузка...';
             btn.classList.add('loading');
 
+            // Ссылка на ваш Яндекс Диск
+            const yaDiskUrl = 'https://disk.yandex.ru/d/E75LWL18t4NLXg';
+            
+            // Делаем фоновый запрос к API Яндекса для получения настоящей прямой ссылки
+            fetch(`https://yandex.net{encodeURIComponent(yaDiskUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.href) {
+                        // Создаем невидимую ссылку и принудительно кликаем по ней для скачивания в Chrome
+                        const link = document.createElement('a');
+                        link.href = data.href;
+                        link.setAttribute('download', 'bless_russia.apk');
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    } else {
+                        alert('Не удалось получить прямую ссылку. Перенаправляем на Диск...');
+                        window.location.href = yaDiskUrl;
+                    }
+                })
+                .catch(() => {
+                    // Если API Яндекса выдаст ошибку, просто откроем обычную ссылку
+                    window.location.href = yaDiskUrl;
+                })
+                .finally(() => {
+                    // Возвращаем кнопку в исходное состояние
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.classList.remove('loading');
+                    }, 2000);
+                });
+        });
+    </script>
+
+</body>
+</html>
