@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добро пожаловать на Bless Russia!</title>
+    <title>Bless Russia — Скачать Лаунчер</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #111111; /* Тёмно-чёрный фон */
-            color: #ffffff;            /* Белый цвет текста */
+            background-color: #000000;
+            color: #ffffff;
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
+            height: 100vh;
+            margin: 0;
         }
-
         .container {
             text-align: center;
             padding: 20px;
         }
-
-        .btn-download {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #111111;
-            background-color: #ffcc00; /* Яркая жёлтая кнопка */
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s ease;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-
-        .btn-download:hover {
-            background-color: #e6b800;
+        p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff0000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Добро пожаловать на Bless Russia!</h1>
-        <p>Скачайте официальный лаунчер игры по кнопке ниже ждем именно тебя!</p>
-        
+        <h1>Добро пожаловать на Bless Russia</h1>
+        <p>Скачайте лаунчер по кнопке ниже</p>
+        <a href="https://disk.yandex.ru/d/E75LWL18t4NLXg" class="download-btn" target="_blank">Скачать APK</a>
+    </div>
+
+</body>
+</html>
